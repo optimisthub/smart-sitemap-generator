@@ -24,5 +24,4 @@ if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
     require __DIR__ . '/vendor/autoload.php';
 }
 
-define( 'WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] );
  

@@ -1,9 +1,9 @@
 <?php
  
-# https://github.com/samdark/sitemap 
-
 use samdark\sitemap\Sitemap;
 use samdark\sitemap\Index;
+
+define( 'SITEMAPURL', 'http://' . $_SERVER['HTTP_HOST'] .'/' );
 
 class SmartSitemap 
 {
@@ -16,7 +16,7 @@ class SmartSitemap
     {  
 
         $this->sitemapPath = ABSPATH.'/sitemaps/';
-        $this->siteUrl = WP_HOME;
+        $this->siteUrl = SITEMAPURL;
         
         add_action( 'init', [$this, 'init']);
     }
