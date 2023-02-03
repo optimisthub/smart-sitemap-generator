@@ -1,5 +1,6 @@
 <?php
-class SmartSitemapAdmin {
+class SmartSitemapAdmin 
+{
 
     private $settings_api;
 
@@ -52,16 +53,28 @@ class SmartSitemapAdmin {
         $fields =  [
             'smartsitemap_basic' => [
                 [ 
-                    'name' => 'is_active',
+                    'name'  => 'is_active',
                     'label' => __( 'Generate Sitemaps Smartly ?', 'smart-sitemap' ),
-                    'desc' => __( 'If you use Yoast SEO, or other plugins can disable our smart sitemap builder.',
+                    'desc'  => __( 'If you use Yoast SEO, or other plugins can disable our smart sitemap builder.',
                     'smart-sitemap' ),
-                    'type' => 'select',
+                    'type'  => 'select',
                     'default' => 'no',
                     'options' =>
                     [
-                    'yes' => 'Yes',
-                    'no' => 'No'
+                        'yes' => 'Yes',
+                        'no' => 'No'
+                    ],
+                ],
+                [ 
+                    'name'  => 'auto_trigger',
+                    'label' =>  __( 'Regenarate sitemaps after post publish/update ?', 'smart-sitemap' ),
+                    'desc'  =>  __( 'Regenarate sitemaps after post publish/update ?', 'smart-sitemap' ),
+                    'type'  => 'select',
+                    'default' => 'no',
+                    'options' =>
+                    [
+                        'yes' => 'Yes',
+                        'no' => 'No'
                     ],
                 ],
                 [
@@ -114,6 +127,12 @@ class SmartSitemapAdmin {
                 [
                     'name' => 'merchant_center',
                     'label' => 'Google Shopping Sitemap',
+                    'desc' => __( '<strong style="color:red">This feature will be avaliable on Premium Version.</strong>', 'smart-sitemap' ),
+                    'type' => 'html'
+                ],
+                [
+                    'name' => 'add_robots',
+                    'label' => 'Add Sitemap Links to robots.txt by Smart Sitemap ',
                     'desc' => __( '<strong style="color:red">This feature will be avaliable on Premium Version.</strong>', 'smart-sitemap' ),
                     'type' => 'html'
                 ],

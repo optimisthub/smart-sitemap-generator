@@ -10,12 +10,13 @@ class SmartSitemap
     public $siteUrl      = null;
     public $postTypes    = null;
     public $expiration   = null;
+    public $trigger      = null;
     public $options      = null;
     public $size         = 1000;
 
     public function __construct()
     {  
-        $this->options      = get_option('smartsitemap_basic'); 
+        $this->options      = get_option('smartsitemap_basic');  
 
         $this->sitemapPath  = ABSPATH.'/sitemaps/';
         $this->siteUrl      = 'https://' . $_SERVER['HTTP_HOST'] .'/';
@@ -23,27 +24,45 @@ class SmartSitemap
         $this->expiration   = @strtotime(data_get($this->options, 'ttl'),'-1 days'); 
         $this->postTypes    = array_keys(data_get($this->options, 'posttypes'));
         $this->isActive     = data_get($this->options, 'is_active', 'no'); 
+        $this->trigger      = data_get($this->options, 'auto_trigger', 'no'); 
 
         add_action( 'init', [$this, 'init']);
+        add_action( 'save_post', [$this, 'triggerRegenerateSitemaps'], 99, 3 );
     }
 
     public function init()
     {   
-        if($this->isActive)
+        if($this->isActive && $this->isActive == 'yes')
         {
             self::createDir($this->sitemapPath); 
             self::cleanDirectory();
     
             foreach($this->postTypes as $type)
             {
-                self::generateSitemap($type);
+                self::generateSitemap($type,'normal');
             }
     
             self::generateSitemapIndex();
         }
     }
 
-    private function generateSitemap($type)
+    public function triggerRegenerateSitemaps()
+    { 
+        if($this->trigger && $this->trigger == 'yes')
+        {
+            self::createDir($this->sitemapPath);
+            self::cleanDirectory();
+    
+            foreach($this->postTypes as $type)
+            {
+                self::generateSitemap($type,'trigger');
+            }
+    
+            self::generateSitemapIndex();
+        }
+    }
+
+    private function generateSitemap($type,$action)
     { 
         $filename = $this->sitemapPath .'/' .$type.'-sitemap.xml';
         $sitemap = new Sitemap($filename);
@@ -61,15 +80,19 @@ class SmartSitemap
             }
         }  
 
-        if(!file_exists($filename))
+        if($action == 'trigger')
         {
             $sitemap->write();
+        } else {
+            if(!file_exists($filename))
+            {
+                $sitemap->write();
+            }
+    
+            if (filectime($filename) > $this->expiration) {
+                $sitemap->write();
+            }
         }
-
-        if (filectime($filename) > $this->expiration) {
-            $sitemap->write();
-        }
-
     }
 
     private function cleanDirectory()
