@@ -21,8 +21,9 @@ class SmartSitemapAdmin {
         $this->settings_api->admin_init();
     }
 
-    function admin_menu() {
-        add_options_page( 'Smart Sitemap Options', 'Smart Sitemap Options', 'delete_posts', 'smart-sitemap', array($this, 'plugin_page') );
+    function admin_menu() 
+    {
+        add_options_page( 'Smart Sitemap Options', 'Smart Sitemap Options', 'delete_posts', 'smart-sitemap', [$this, 'optionRender'] );
     }
 
     function get_settings_sections() {
@@ -30,11 +31,11 @@ class SmartSitemapAdmin {
         $sections = [
 
             [
-                'id' => 'basic',
+                'id' => 'smartsitemap_basic',
                 'title' => 'Basic Settings'
             ],
             [
-                'id' => 'advenced',
+                'id' => 'smartsitemap_advenced',
                 'title' => 'Advenced Settings'
             ],
         ];
@@ -49,7 +50,7 @@ class SmartSitemapAdmin {
      */
     function get_settings_fields() {
         $fields =  [
-            'basic' => [
+            'smartsitemap_basic' => [
                 [ 
                     'name' => 'is_active',
                     'label' => __( 'Generate Sitemaps Smartly ?', 'smart-sitemap' ),
@@ -91,7 +92,7 @@ class SmartSitemapAdmin {
                     ],
                 ]
             ],
-            'advenced' => [
+            'smartsitemap_advenced' => [
                 [
                     'name' => 'cpt_info',
                     'label' => 'Custom Post Types',
@@ -121,9 +122,9 @@ class SmartSitemapAdmin {
         return $fields;
     }
 
-    function plugin_page() 
+    function optionRender() 
     {
-        echo '<div class="wrap">';
+        echo '<div class="wrap">'; 
             $this->settings_api->show_navigation();
             $this->settings_api->show_forms();
         echo '</div>';

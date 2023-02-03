@@ -5,32 +5,42 @@ use samdark\sitemap\Index;
  
 class SmartSitemap 
 {
+    public $isActive     = null;
     public $sitemapPath  = null;
     public $siteUrl      = null;
-    public $postTypes    = ['post', 'page', 'product'];
-    public $size         = 1000;
+    public $postTypes    = null;
     public $expiration   = null;
+    public $options      = null;
+    public $size         = 1000;
 
     public function __construct()
     {  
+        $this->options      = get_option('smartsitemap_basic'); 
+
         $this->sitemapPath  = ABSPATH.'/sitemaps/';
         $this->siteUrl      = 'https://' . $_SERVER['HTTP_HOST'] .'/';
-        $this->expiration   = strtotime("-1 day");
         
+        $this->expiration   = @strtotime(data_get($this->options, 'ttl'),'-1 days'); 
+        $this->postTypes    = array_keys(data_get($this->options, 'posttypes'));
+        $this->isActive     = data_get($this->options, 'is_active', 'no'); 
+
         add_action( 'init', [$this, 'init']);
     }
 
     public function init()
     {   
-        self::createDir($this->sitemapPath); 
-        self::cleanDirectory();
-
-        foreach($this->postTypes as $type)
+        if($this->isActive)
         {
-            self::generateSitemap($type);
+            self::createDir($this->sitemapPath); 
+            self::cleanDirectory();
+    
+            foreach($this->postTypes as $type)
+            {
+                self::generateSitemap($type);
+            }
+    
+            self::generateSitemapIndex();
         }
-
-        self::generateSitemapIndex();
     }
 
     private function generateSitemap($type)
