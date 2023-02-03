@@ -1,6 +1,58 @@
 {
     "packages": [
         {
+            "name": "rappasoft/laravel-helpers",
+            "version": "v2.0.0",
+            "version_normalized": "2.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rappasoft/laravel-helpers.git",
+                "reference": "39fc647c27db358c535919cda2040e89b51344af"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rappasoft/laravel-helpers/zipball/39fc647c27db358c535919cda2040e89b51344af",
+                "reference": "39fc647c27db358c535919cda2040e89b51344af",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.3|^8.0"
+            },
+            "time": "2021-10-01T18:00:53+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "src/arrays.php",
+                    "src/classes.php",
+                    "src/helpers.php",
+                    "src/strings.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Anthony Rappa",
+                    "email": "rappa819@gmail.com"
+                }
+            ],
+            "description": "Laravel Helpers for Non-Laravel Projects",
+            "keywords": [
+                "String helpers",
+                "array helpers",
+                "helpers",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/rappasoft/laravel-helpers/issues",
+                "source": "https://github.com/rappasoft/laravel-helpers/tree/v2.0.0"
+            },
+            "install-path": "../rappasoft/laravel-helpers"
+        },
+        {
             "name": "samdark/sitemap",
             "version": "2.4.0",
             "version_normalized": "2.4.0.0",

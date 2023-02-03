@@ -3,7 +3,7 @@
 /**
  * Plugin Name:     Smart Sitemap
  * Plugin URI:      https://github.com/optimisthub/smart-sitemap
- * Description:     Generate Sitemaps for Google, Google News, Yandex, Bing and other search engines.
+ * Description:     Generate Sitemaps for Google, Yandex, Bing and other search engines.
  * Author:          optimisthub
  * Author URI:      https://optimisthub.com
  * Text Domain:     smart-sitemap
@@ -23,4 +23,6 @@ if ( ! defined( 'ABSPATH' ) )
 if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
     require __DIR__ . '/vendor/autoload.php';
 }
+
+define( 'WP_HOME', 'http://' . $_SERVER['HTTP_HOST'] );
  

@@ -7,6 +7,10 @@ namespace Composer\Autoload;
 class ComposerStaticInit3272bf10f647ca50ba254e49a97c01d1
 {
     public static $files = array (
+        '460404fa6d3686d7820838788517c1f9' => __DIR__ . '/..' . '/rappasoft/laravel-helpers/src/arrays.php',
+        'c0908dd0408c67235210b4bf031d1290' => __DIR__ . '/..' . '/rappasoft/laravel-helpers/src/classes.php',
+        '728cd66d334b33c0fb1ed0fe1060a82b' => __DIR__ . '/..' . '/rappasoft/laravel-helpers/src/helpers.php',
+        'daf45b1134c9868f305965e4c0e0f06c' => __DIR__ . '/..' . '/rappasoft/laravel-helpers/src/strings.php',
         '8b9192a8131895a79b75d4c1c243c92c' => __DIR__ . '/../..' . '/includes/class.smart-sitemap.php',
     );
 

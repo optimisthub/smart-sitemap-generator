@@ -303,9 +303,9 @@ class Sitemap
      */
     private function addSingleLanguageItem($location, $lastModified, $changeFrequency, $priority)
     {
-        $this->validateLocation($location);
+       # $this->validateLocation($location);
 
-
+        
         $this->writer->startElement('url');
 
         $this->writer->writeElement('loc', $location);
@@ -353,7 +353,7 @@ class Sitemap
     private function addMultiLanguageItem($locations, $lastModified, $changeFrequency, $priority)
     {
         foreach ($locations as $language => $url) {
-            $this->validateLocation($url);
+            #$this->validateLocation($url);
 
             $this->writer->startElement('url');
 

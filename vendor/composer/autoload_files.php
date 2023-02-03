@@ -6,5 +6,9 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    '460404fa6d3686d7820838788517c1f9' => $vendorDir . '/rappasoft/laravel-helpers/src/arrays.php',
+    'c0908dd0408c67235210b4bf031d1290' => $vendorDir . '/rappasoft/laravel-helpers/src/classes.php',
+    '728cd66d334b33c0fb1ed0fe1060a82b' => $vendorDir . '/rappasoft/laravel-helpers/src/helpers.php',
+    'daf45b1134c9868f305965e4c0e0f06c' => $vendorDir . '/rappasoft/laravel-helpers/src/strings.php',
     '8b9192a8131895a79b75d4c1c243c92c' => $baseDir . '/includes/class.smart-sitemap.php',
 );
