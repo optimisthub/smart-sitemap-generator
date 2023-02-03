@@ -11,4 +11,5 @@ return array(
     '728cd66d334b33c0fb1ed0fe1060a82b' => $vendorDir . '/rappasoft/laravel-helpers/src/helpers.php',
     'daf45b1134c9868f305965e4c0e0f06c' => $vendorDir . '/rappasoft/laravel-helpers/src/strings.php',
     '8b9192a8131895a79b75d4c1c243c92c' => $baseDir . '/includes/class.smart-sitemap.php',
+    '824566973fcae1e098f27525f7afcf03' => $baseDir . '/includes/class.smart-sitemap-admin.php',
 );

@@ -2,21 +2,20 @@
  
 use samdark\sitemap\Sitemap;
 use samdark\sitemap\Index;
-
-define( 'SITEMAPURL', 'http://' . $_SERVER['HTTP_HOST'] .'/' );
-
+ 
 class SmartSitemap 
 {
-    protected $sitemapPath  = null;
-    protected $siteUrl      = null;
-    protected $postTypes    = ['post', 'page', 'product'];
-    protected $size         = 1000;
+    public $sitemapPath  = null;
+    public $siteUrl      = null;
+    public $postTypes    = ['post', 'page', 'product'];
+    public $size         = 1000;
+    public $expiration   = null;
 
     public function __construct()
     {  
-
-        $this->sitemapPath = ABSPATH.'/sitemaps/';
-        $this->siteUrl = SITEMAPURL;
+        $this->sitemapPath  = ABSPATH.'/sitemaps/';
+        $this->siteUrl      = 'https://' . $_SERVER['HTTP_HOST'] .'/';
+        $this->expiration   = strtotime("-1 day");
         
         add_action( 'init', [$this, 'init']);
     }
@@ -35,14 +34,15 @@ class SmartSitemap
     }
 
     private function generateSitemap($type)
-    {
-        // create sitemap 
-        $sitemap = new Sitemap($this->sitemapPath .'/' .$type.'-sitemap.xml');
+    { 
+        $filename = $this->sitemapPath .'/' .$type.'-sitemap.xml';
+        $sitemap = new Sitemap($filename);
 
         $sitemap->setMaxUrls($this->size);
         $posts = [];
         $query = self::getPosts($type);
         $posts[$type] = data_get($query, 'posts');
+
         if($posts[$type])
         {
             foreach ($posts[$type] as $key => $value) 
@@ -50,7 +50,16 @@ class SmartSitemap
                 $sitemap->addItem(get_permalink(data_get($value, 'ID')), strtotime(data_get($value,'post_date',time())));
             }
         }  
-        $sitemap->write();
+
+        if(!file_exists($filename))
+        {
+            $sitemap->write();
+        }
+
+        if (filectime($filename) > $this->expiration) {
+            $sitemap->write();
+        }
+
     }
 
     private function cleanDirectory()
@@ -78,13 +87,6 @@ class SmartSitemap
             ]    
         );
     }
- 
-
-    private function fetchImageCount($content)
-    {
-        $regex = '/src="([^"]*)"/';
-        preg_match_all( $regex, $content, $matches );
-    }
 
     private function generateSitemapIndex()
     {
@@ -97,15 +99,17 @@ class SmartSitemap
             }
         }
 
-        $sitemap = new Index($this->sitemapPath.'/sitemap-index.xml');
+        $filename = $this->sitemapPath.'/sitemap-index.xml';
+
+        $sitemap = new Index($filename);
         
         foreach($urls as $urzl)
         {  
             $url = self::formatUrl($urzl);
             $sitemap->addSitemap($this->siteUrl.''.$url, time(), Sitemap::DAILY, 0.3);
-        }
- 
-        $sitemap->write();
+        } 
+        
+        $sitemap->write();  
     }
 
     private function formatUrl($url)

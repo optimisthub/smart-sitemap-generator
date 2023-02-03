@@ -12,6 +12,7 @@ class ComposerStaticInit3272bf10f647ca50ba254e49a97c01d1
         '728cd66d334b33c0fb1ed0fe1060a82b' => __DIR__ . '/..' . '/rappasoft/laravel-helpers/src/helpers.php',
         'daf45b1134c9868f305965e4c0e0f06c' => __DIR__ . '/..' . '/rappasoft/laravel-helpers/src/strings.php',
         '8b9192a8131895a79b75d4c1c243c92c' => __DIR__ . '/../..' . '/includes/class.smart-sitemap.php',
+        '824566973fcae1e098f27525f7afcf03' => __DIR__ . '/../..' . '/includes/class.smart-sitemap-admin.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -30,6 +31,7 @@ class ComposerStaticInit3272bf10f647ca50ba254e49a97c01d1
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
+        'WeDevs_Settings_API' => __DIR__ . '/..' . '/tareq1988/wordpress-settings-api-class/src/class.settings-api.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
