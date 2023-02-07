@@ -2,7 +2,7 @@
 
 /**
  * Plugin Name:     Smart Sitemap
- * Plugin URI:      https://github.com/optimisthub/smart-sitemap
+ * Plugin URI:      https://optimisthub.com
  * Description:     Generate Sitemaps for Google, Yandex, Bing and other search engines.
  * Author:          optimisthub
  * Author URI:      https://optimisthub.com

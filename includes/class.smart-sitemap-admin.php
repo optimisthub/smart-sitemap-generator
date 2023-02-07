@@ -33,12 +33,8 @@ class SmartSitemapAdmin
 
             [
                 'id' => 'smartsitemap_basic',
-                'title' => 'Basic Settings'
-            ],
-            [
-                'id' => 'smartsitemap_advenced',
-                'title' => 'Advenced Settings'
-            ],
+                'title' => 'Smart Sitemap Settings'
+            ]
         ];
 
         return $sections;
@@ -104,38 +100,6 @@ class SmartSitemapAdmin
                         'product' => 'Products',
                     ],
                 ]
-            ],
-            'smartsitemap_advenced' => [
-                [
-                    'name' => 'cpt_info',
-                    'label' => 'Custom Post Types',
-                    'desc' => __( '<strong style="color:red">This feature will be avaliable on Premium Version.</strong>', 'smart-sitemap' ),
-                    'type' => 'html'
-                ],
-                [
-                    'name' => 'news_sitemap',
-                    'label' => 'Google News Sitemap',
-                    'desc' => __( '<strong style="color:red">This feature will be avaliable on Premium Version.</strong>', 'smart-sitemap' ),
-                    'type' => 'html'
-                ],
-                [
-                    'name' => 'image_sitemap',
-                    'label' => 'Image Sitemap',
-                    'desc' => __( '<strong style="color:red">This feature will be avaliable on Premium Version.</strong>', 'smart-sitemap' ),
-                    'type' => 'html'
-                ],
-                [
-                    'name' => 'merchant_center',
-                    'label' => 'Google Shopping Sitemap',
-                    'desc' => __( '<strong style="color:red">This feature will be avaliable on Premium Version.</strong>', 'smart-sitemap' ),
-                    'type' => 'html'
-                ],
-                [
-                    'name' => 'add_robots',
-                    'label' => 'Add Sitemap Links to robots.txt by Smart Sitemap ',
-                    'desc' => __( '<strong style="color:red">This feature will be avaliable on Premium Version.</strong>', 'smart-sitemap' ),
-                    'type' => 'html'
-                ],
             ]
         ];
         return $fields;
