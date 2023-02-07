@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Plugin Name:     Smart Sitemaps
+ * Plugin Name:     Smart Sitemap Generator
  * Plugin URI:      https://optimisthub.com
  * Description:     Generate Sitemaps for Google, Yandex, Bing and other search engines.
  * Author:          optimisthub
  * Author URI:      https://optimisthub.com
- * Text Domain:     smart-sitemaps
+ * Text Domain:     smart-sitemap-generator
  * Version:         1.0.0
  * Requires at least: 5.0
  * Tested up to: 6.1.1

@@ -24,7 +24,7 @@ class SmartSitemapAdmin
 
     function admin_menu() 
     {
-        add_options_page( 'Smart Sitemap Options', 'Smart Sitemap Options', 'delete_posts', 'smart-sitemap', [$this, 'optionRender'] );
+        add_options_page( 'Smart Sitemap Options', 'Smart Sitemap Options', 'delete_posts', 'smart-sitemap-generator', [$this, 'optionRender'] );
     }
 
     function get_settings_sections() {
@@ -50,9 +50,9 @@ class SmartSitemapAdmin
             'smartsitemap_basic' => [
                 [ 
                     'name'  => 'is_active',
-                    'label' => __( 'Generate Sitemaps Smartly ?', 'smart-sitemap' ),
+                    'label' => __( 'Generate Sitemaps Smartly ?', 'smart-sitemap-generator' ),
                     'desc'  => __( 'If you use Yoast SEO, or other plugins can disable our smart sitemap builder.',
-                    'smart-sitemap' ),
+                    'smart-sitemap-generator' ),
                     'type'  => 'select',
                     'default' => 'no',
                     'options' =>
@@ -63,8 +63,8 @@ class SmartSitemapAdmin
                 ],
                 [ 
                     'name'  => 'auto_trigger',
-                    'label' =>  __( 'Regenarate sitemaps after post publish/update ?', 'smart-sitemap' ),
-                    'desc'  =>  __( 'Regenarate sitemaps after post publish/update ?', 'smart-sitemap' ),
+                    'label' =>  __( 'Regenarate sitemaps after post publish/update ?', 'smart-sitemap-generator' ),
+                    'desc'  =>  __( 'Regenarate sitemaps after post publish/update ?', 'smart-sitemap-generator' ),
                     'type'  => 'select',
                     'default' => 'no',
                     'options' =>
@@ -75,8 +75,8 @@ class SmartSitemapAdmin
                 ],
                 [
                     'name'  => 'ttl',
-                    'label' => __( 'Sitemap Regeneration Time', 'smart-sitemap' ),
-                    'desc'  => __( 'Default is 24 Hours.', 'smart-sitemap' ),
+                    'label' => __( 'Sitemap Regeneration Time', 'smart-sitemap-generator' ),
+                    'desc'  => __( 'Default is 24 Hours.', 'smart-sitemap-generator' ),
                     'type'  => 'select',
                     'default' => 'no',
                     'options' => 
@@ -87,8 +87,8 @@ class SmartSitemapAdmin
                 ],
                 [
                     'name'    => 'posttypes',
-                    'label'   => __( 'Select Post Types for sitemaps', 'smart-sitemap' ),
-                    'desc'    => __( 'Select Post Types for smartly generated sitemaps', 'smart-sitemap' ),
+                    'label'   => __( 'Select Post Types for sitemaps', 'smart-sitemap-generator' ),
+                    'desc'    => __( 'Select Post Types for smartly generated sitemaps', 'smart-sitemap-generator' ),
                     'type'    => 'multicheck',
                     'default' => [
                         'post' => 'Posts',
