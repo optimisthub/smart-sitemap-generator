@@ -31,7 +31,6 @@ class ComposerStaticInit3272bf10f647ca50ba254e49a97c01d1
 
     public static $classMap = array (
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
-        'WeDevs_Settings_API' => __DIR__ . '/..' . '/tareq1988/wordpress-settings-api-class/src/class.settings-api.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

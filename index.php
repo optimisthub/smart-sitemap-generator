@@ -14,11 +14,7 @@
  * License: GPLv2
  */
  
-
-if ( ! defined( 'ABSPATH' ) ) 
-{
-	exit;
-}
+defined( 'ABSPATH' ) || exit;
 
 if ( is_readable( __DIR__ . '/vendor/autoload.php' ) ) {
     require __DIR__ . '/vendor/autoload.php';

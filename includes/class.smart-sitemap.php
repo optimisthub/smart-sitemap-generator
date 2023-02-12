@@ -19,7 +19,7 @@ class SmartSitemap
         $this->options      = get_option('smartsitemap_basic');  
 
         $this->sitemapPath  = ABSPATH.'/sitemaps/';
-        $this->siteUrl      = 'https://' . $_SERVER['HTTP_HOST'] .'/';
+        $this->siteUrl      = sanitize_url('https://' . $_SERVER['HTTP_HOST'] .'/');
         
         $this->expiration   = @strtotime(data_get($this->options, 'ttl'),'-1 days'); 
         $this->postTypes    = array_keys(data_get($this->options, 'posttypes'));
