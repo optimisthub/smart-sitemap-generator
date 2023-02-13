@@ -16,13 +16,13 @@ class SmartSitemap
 
     public function __construct()
     {  
-        $this->options      = get_option('smartsitemap_basic');  
+        $this->options      = get_option('smartsitemap__options');  
 
         $this->sitemapPath  = ABSPATH.'/sitemaps/';
-        $this->siteUrl      = sanitize_url('https://' . $_SERVER['HTTP_HOST'] .'/');
+        $this->siteUrl = sanitize_url(get_bloginfo('url'));
         
         $this->expiration   = @strtotime(data_get($this->options, 'ttl'),'-1 days'); 
-        $this->postTypes    = array_keys(data_get($this->options, 'posttypes'));
+        $this->postTypes    = array_values(data_get($this->options, 'posttypes'));
         $this->isActive     = data_get($this->options, 'is_active', 'no'); 
         $this->trigger      = data_get($this->options, 'auto_trigger', 'no'); 
 
@@ -85,7 +85,7 @@ class SmartSitemap
             $sitemap->write();
         } else {
             if(!file_exists($filename))
-            {
+            { 
                 $sitemap->write();
             }
     
@@ -139,7 +139,7 @@ class SmartSitemap
         foreach($urls as $urzl)
         {  
             $url = self::formatUrl($urzl);
-            $sitemap->addSitemap($this->siteUrl.''.$url, time(), Sitemap::DAILY, 0.3);
+            $sitemap->addSitemap($this->siteUrl.'/'.$url, time(), Sitemap::DAILY, 0.3);
         } 
         
         $sitemap->write();  

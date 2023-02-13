@@ -7,6 +7,4 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'samdark\\sitemap\\' => array($vendorDir . '/samdark/sitemap'),
-    'OomphInc\\ComposerInstallersExtender\\' => array($vendorDir . '/oomphinc/composer-installers-extender/src'),
-    'Composer\\Installers\\' => array($vendorDir . '/composer/installers/src/Composer/Installers'),
 );

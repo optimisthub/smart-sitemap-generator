@@ -20,28 +20,12 @@ class ComposerStaticInit3272bf10f647ca50ba254e49a97c01d1
         array (
             'samdark\\sitemap\\' => 16,
         ),
-        'O' => 
-        array (
-            'OomphInc\\ComposerInstallersExtender\\' => 36,
-        ),
-        'C' => 
-        array (
-            'Composer\\Installers\\' => 20,
-        ),
     );
 
     public static $prefixDirsPsr4 = array (
         'samdark\\sitemap\\' => 
         array (
             0 => __DIR__ . '/..' . '/samdark/sitemap',
-        ),
-        'OomphInc\\ComposerInstallersExtender\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/oomphinc/composer-installers-extender/src',
-        ),
-        'Composer\\Installers\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/composer/installers/src/Composer/Installers',
         ),
     );
 
