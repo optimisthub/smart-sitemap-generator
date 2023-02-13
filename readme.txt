@@ -12,7 +12,7 @@ Smart Sitemap Generator is a simple plugin that allows you to intelligently gene
 
 == Description ==
 
-Smart Sitemap Generator Eklentisini kurduktan sonra, kolay admin panel ayarları sayesinde, isterseniz XML sitemap'leri otomatik ürettirebilir, dilediğiniz yazı türlerini hariç tutabilirsiniz.
+After installing the Smart Sitemap Generator Plugin, you can automatically generate XML sitemaps and exclude any font you want, thanks to easy admin panel settings.
 
 Since the sitemaps created with Smart Sitemap Generator create fixed xml files no matter how much content you have, it generates sitemaps consisting of 1000 URLs without affecting your visitor performance and adds them all to a main directory.
 
@@ -37,8 +37,9 @@ You can activate or deactivate it in combination with plugins such as Yoast SEO,
  
 ### AFTER ACTIVATION
 
-1. Smart Sitemap Generator is a 'set and forget' plugin. There are no settings fields as your site's scheduled posts will be automatically checked when the plugin is installed and activated.
-1. You’re done!
+1. Smart Sitemap Generator is a simple plugin that allows you to intelligently generate XML Sitemap outputs of your posts, pages and products automatically.
+1. Thanks to the settings in the Smart Sitemap Generator Admin interface, you can regenerate XML sitemaps as you wish, 24 hours a day or in different periods.
+1. You can activate or deactivate it in combination with plugins such as Yoast SEO, All in One SEO, Rank Math SEO.
 
 == Changelog ==  
 
