@@ -18,7 +18,7 @@ jobs:
         env:
           SVN_PASSWORD: ${{ secrets.SVN_PASSWORD }}
           SVN_USERNAME: ${{ secrets.SVN_USERNAME }}
-          SLUG: scheduled-posts-issue-fixer
+          SLUG: smart-sitemap-generator
       - name: Upload release asset
         uses: actions/upload-release-asset@v1
         env:
