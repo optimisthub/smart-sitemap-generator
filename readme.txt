@@ -43,6 +43,10 @@ You can activate or deactivate it in combination with plugins such as Yoast SEO,
 
 == Changelog ==  
 
+= 1.0.01 =
+
+* Plugin Github url changed.
+
 = 1.0.0 =
 
 * Stable version released
