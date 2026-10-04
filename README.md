@@ -61,7 +61,10 @@ Bu adresi Google Search Console, Bing Webmaster Tools ve Yandex Webmaster'a gön
 
 ### Composer ile kurulum
 
+Bu paket Packagist'te yayınlanmadığı için önce VCS deposu olarak tanıtmanız gerekir:
+
 ```bash
+composer config repositories.optimisthub-ssg vcs https://github.com/optimisthub/smart-sitemap-generator
 composer require optimisthub/smart-sitemap-generator
 ```
 
