@@ -61,12 +61,60 @@ Bu adresi Google Search Console, Bing Webmaster Tools ve Yandex Webmaster'a gön
 
 ### Composer ile kurulum
 
-Bu paket Packagist'te yayınlanmadığı için önce VCS deposu olarak tanıtmanız gerekir:
+Bu paket Packagist'te yayınlanmadığı için önce GitHub deposunu VCS deposu
+olarak tanıtmanız gerekir:
 
 ```bash
 composer config repositories.optimisthub-ssg vcs https://github.com/optimisthub/smart-sitemap-generator
 composer require optimisthub/smart-sitemap-generator
 ```
+
+### Bedrock ile kurulum
+
+[Bedrock](https://roots.io/bedrock/) kullanıyorsanız eklenti, `type`
+alanı `wordpress-plugin` olduğu için `composer/installers` tarafından
+doğru dizine yerleştirilir. Projenizin `composer.json` dosyasına şunları
+ekleyin:
+
+```json
+{
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/optimisthub/smart-sitemap-generator"
+        }
+    ],
+    "require": {
+        "optimisthub/smart-sitemap-generator": "^2.0"
+    },
+    "extra": {
+        "installer-paths": {
+            "web/app/plugins/{$name}/": ["type:wordpress-plugin"]
+        }
+    },
+    "config": {
+        "allow-plugins": {
+            "composer/installers": true
+        }
+    }
+}
+```
+
+Ardından:
+
+```bash
+composer update optimisthub/smart-sitemap-generator
+```
+
+Eklenti `web/app/plugins/smart-sitemap-generator/` dizinine kurulur.
+Etkinleştirmek için:
+
+```bash
+wp plugin activate smart-sitemap-generator
+```
+
+> **Not:** `installer-paths` tanımı olmadan eklenti `vendor/` altına
+> kurulur ve WordPress onu görmez.
 
 ## Sıkça Sorulan Sorular
 
