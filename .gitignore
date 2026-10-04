@@ -1,3 +1,13 @@
-*.lock
-composer.json
-.init/
+# No runtime dependencies; dev tooling is installed by Composer.
+/vendor/
+/composer.lock
+
+# Local tooling and test artifacts.
+/.composer-cache/
+/.tests/
+/phpcs.xml
+/.phpunit.result.cache
+
+# OS noise.
+.DS_Store
+Thumbs.db

@@ -1,0 +1,63 @@
+<?xml version="1.0"?>
+<ruleset name="Smart Sitemap Generator">
+    <description>WordPress Coding Standards for the Smart Sitemap Generator plugin.</description>
+
+    <file>index.php</file>
+    <file>uninstall.php</file>
+    <file>src/</file>
+
+    <exclude-pattern>/vendor/*</exclude-pattern>
+    <exclude-pattern>/node_modules/*</exclude-pattern>
+
+    <arg name="extensions" value="php"/>
+    <arg name="colors"/>
+    <arg value="sp"/>
+    <arg name="parallel" value="8"/>
+
+    <rule ref="WordPress">
+        <!-- PSR-4 file names (Plugin.php, Settings.php, Generator.php) are intentional. -->
+        <exclude name="WordPress.Files.FileName"/>
+    </rule>
+
+    <rule ref="WordPress.WP.I18n">
+        <properties>
+            <property name="text_domain" type="array">
+                <element value="smart-sitemap-generator"/>
+            </property>
+        </properties>
+    </rule>
+
+    <rule ref="WordPress.NamingConventions.PrefixAllGlobals">
+        <properties>
+            <property name="prefixes" type="array">
+                <element value="smartsitemap"/>
+                <element value="smart_sitemap"/>
+                <element value="SMART_SITEMAP"/>
+                <element value="OptimistHub"/>
+                <element value="plugin"/>
+            </property>
+        </properties>
+    </rule>
+
+    <!--
+        The parameter is conventionally named $class in every PSR-4 autoloader,
+        including Composer's own.
+    -->
+    <rule ref="Universal.NamingConventions.NoReservedKeywordParameterNames.classFound">
+        <severity>0</severity>
+    </rule>
+
+    <!--
+        Sitemaps are static files written on the front end and on wp-cron; using
+        WP_Filesystem there would require credentials for a routine file write.
+    -->
+    <rule ref="WordPress.WP.AlternativeFunctions.file_system_operations_file_put_contents">
+        <severity>0</severity>
+    </rule>
+    <rule ref="WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents">
+        <severity>0</severity>
+    </rule>
+
+    <config name="minimum_supported_wp_version" value="6.0"/>
+    <config name="testVersion" value="7.4-"/>
+</ruleset>

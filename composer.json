@@ -1,0 +1,35 @@
+{
+    "name": "optimisthub/smart-sitemap-generator",
+    "description": "Automatically generate XML sitemaps and a sitemap index for WordPress.",
+    "type": "wordpress-plugin",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Optimist Hub",
+            "homepage": "https://optimisthub.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4"
+    },
+    "require-dev": {
+        "phpcompatibility/phpcompatibility-wp": "*",
+        "wp-coding-standards/wpcs": "^3.0",
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "OptimistHub\\SmartSitemap\\": "src/"
+        }
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "sort-packages": true,
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "scripts": {
+        "lint": "php -l index.php && find src -name '*.php' -exec php -l {} \\;"
+    }
+}
