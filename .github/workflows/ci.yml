@@ -53,4 +53,9 @@ jobs:
           tools: composer
 
       - name: Audit dependencies for known vulnerabilities
-        run: composer audit --no-dev
+        run: |
+          if [ -f vendor/autoload.php ]; then
+            composer audit --no-dev
+          else
+            echo "This plugin has no runtime Composer dependencies; nothing to audit."
+          fi
