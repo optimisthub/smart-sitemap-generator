@@ -1,4 +1,4 @@
-<img src="https://ps.w.org/smart-sitemap-generator/assets/banner-1544x500.png?rev=3729079" alt="Smart Sitemap Generator" style="float: left; width:100%; margin-bottom:30px" />
+<img src="https://ps.w.org/smart-sitemap-generator/assets/banner-1544x500.png?rev=1791214569" alt="Smart Sitemap Generator" style="float: left; width:100%; margin-bottom:30px" />
 
 # Smart Sitemap Generator
 
