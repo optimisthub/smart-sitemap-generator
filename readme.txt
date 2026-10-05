@@ -1,10 +1,10 @@
 === Smart Sitemap Generator ===
 Contributors: optimisthub, fatih-toprak
-Tags: sitemap, xml sitemap, google sitemap, bing sitemap, yandex sitemap, seo
+Tags: sitemap, xml sitemap, google sitemap, yandex sitemap, seo
 Requires at least: 6.0
 Tested up to: 7.1
 Requires PHP: 7.4
-Stable tag: 2.0.0
+Stable tag: 2.0.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -89,6 +89,11 @@ Yes. Each site generates its own sitemaps inside its own uploads directory.
 
 == Changelog ==
 
+= 2.0.1 =
+
+* Reduced the tag list to the five-tag limit. "bing sitemap" was removed so "seo" takes effect instead of being ignored by WordPress.org. "google sitemap" and "yandex sitemap" remain, so search-engine coverage is preserved.
+* No functional changes.
+
 = 2.0.0 =
 
 **Fixed**
@@ -124,6 +129,10 @@ Yes. Each site generates its own sitemaps inside its own uploads directory.
 * Stable version released
 
 == Upgrade Notice ==
+
+= 2.0.1 =
+
+Metadata release. Reduces the tag list to the five-tag limit so the "seo" tag is no longer ignored. No functional changes.
 
 = 2.0.0 =
 

@@ -12,7 +12,7 @@
 | **Minimum WordPress Sürümü** | 6.0 |
 | **Test Edilen WordPress Sürümü** | 7.1 |
 | **PHP** | 7.4+ |
-| **Stabil Versiyon** | 2.0.0 |
+| **Stabil Versiyon** | 2.0.1 |
 | **Lisans** | GPLv2 ya da daha sonrası |
 | **Lisans URI** | https://www.gnu.org/licenses/gpl-2.0.html |
 
@@ -161,6 +161,11 @@ vendor/bin/phpcs --standard=phpcs.xml.dist   # WordPress kod standartları
 ```
 
 ## Versiyon Geçmişi
+
+### 2.0.1
+
+- Etiket listesi 5 sınırına indirildi. `bing sitemap` çıkarıldı, böylece `seo` etiketi WordPress.org tarafından yok sayılmak yerine geçerli oldu. `google sitemap` ve `yandex sitemap` korundu, arama motoru kapsamı daralmadı.
+- İşlevsel değişiklik yok.
 
 ### 2.0.0
 

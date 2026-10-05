@@ -3,7 +3,7 @@
  * Plugin Name:       Smart Sitemap Generator
  * Plugin URI:        https://github.com/optimisthub/smart-sitemap-generator
  * Description:       Automatically generate XML sitemaps and a sitemap index for your posts, pages and custom post types. Fast, cached and search-engine ready.
- * Version:           2.0.0
+ * Version:           2.0.1
  * Requires at least: 6.0
  * Tested up to:      7.1
  * Requires PHP:      7.4
@@ -23,7 +23,7 @@ namespace OptimistHub\SmartSitemap;
 
 defined( 'ABSPATH' ) || exit;
 
-define( 'SMART_SITEMAP_VERSION', '2.0.0' );
+define( 'SMART_SITEMAP_VERSION', '2.0.1' );
 define( 'SMART_SITEMAP_FILE', __FILE__ );
 define( 'SMART_SITEMAP_DIR', plugin_dir_path( __FILE__ ) );
 
